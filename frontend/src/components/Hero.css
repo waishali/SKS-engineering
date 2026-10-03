@@ -1,0 +1,405 @@
+
+
+.hero {
+  position: relative;
+  min-height: 720px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 25, 45, 0.97) 0%,
+      rgba(7, 35, 62, 0.90) 45%,
+      rgba(7, 35, 62, 0.55) 75%,
+      rgba(7, 35, 62, 0.30) 100%
+    ),
+    url("/hero-bg.jpg") center / cover no-repeat;
+}
+
+/* Dark engineering-style background */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(4, 18, 32, 0.65),
+      transparent 55%
+    );
+  z-index: 0;
+}
+
+/* Blue/red engineering accent */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  right: -180px;
+  bottom: -220px;
+  border-radius: 50%;
+  background: rgba(220, 38, 38, 0.18);
+  filter: blur(20px);
+  z-index: 0;
+}
+
+
+/* ================================
+   HERO CONTENT
+   ================================ */
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(1200px, 92%);
+  margin: 0 auto;
+
+  padding: 110px 0 100px;
+}
+
+
+/* Small label */
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-bottom: 24px;
+  padding: 9px 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50px;
+
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+
+  color: #ffffff;
+
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.hero-label::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: #ef4444;
+
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.8);
+}
+
+
+/* ================================
+   MAIN HEADING
+   ================================ */
+
+.hero h1 {
+  max-width: 850px;
+
+  margin: 0 0 24px;
+
+  color: #ffffff;
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.05;
+
+  font-weight: 800;
+  letter-spacing: -2.5px;
+}
+
+.hero h1 span {
+  color: #ef4444;
+}
+
+
+/* ================================
+   HERO DESCRIPTION
+   ================================ */
+
+.hero p {
+  max-width: 700px;
+
+  margin: 0 0 36px;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 18px;
+  line-height: 1.8;
+
+  font-weight: 400;
+}
+
+
+/* ================================
+   BUTTON AREA
+   ================================ */
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  flex-wrap: wrap;
+}
+
+
+/* Primary button */
+
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 54px;
+  padding: 0 28px;
+
+  border: 2px solid #dc2626;
+  border-radius: 8px;
+
+  background: #dc2626;
+  color: #ffffff;
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.hero-btn-primary:hover {
+  background: #b91c1c;
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(220, 38, 38, 0.35);
+}
+
+
+/* Secondary button */
+
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 54px;
+  padding: 0 28px;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 8px;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: #ffffff;
+
+  transform: translateY(-3px);
+}
+
+
+/* ================================
+   ENGINEERING INFO CARDS
+   ================================ */
+
+.hero-features {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  max-width: 900px;
+
+  margin-top: 70px;
+}
+
+
+.hero-feature {
+  padding: 20px;
+
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.07);
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.hero-feature:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.11);
+}
+
+
+.hero-feature h3 {
+  margin: 0 0 7px;
+
+  color: #ffffff;
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+.hero-feature p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.68);
+
+  font-family:
+    "Inter",
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* ================================
+   RESPONSIVE - TABLET
+   ================================ */
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: 650px;
+  }
+
+  .hero-content {
+    padding: 90px 0 80px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 8vw, 60px);
+  }
+
+  .hero p {
+    font-size: 17px;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-top: 50px;
+  }
+}
+
+
+/* ================================
+   RESPONSIVE - MOBILE
+   ================================ */
+
+@media (max-width: 600px) {
+  .hero {
+    min-height: auto;
+
+    background:
+      linear-gradient(
+        rgba(5, 22, 39, 0.92),
+        rgba(5, 22, 39, 0.96)
+      ),
+      url("/hero-bg.jpg") center / cover no-repeat;
+  }
+
+  .hero-content {
+    width: 90%;
+    padding: 80px 0 70px;
+  }
+
+  .hero-label {
+    font-size: 11px;
+    padding: 8px 13px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 45px;
+  }
+}
