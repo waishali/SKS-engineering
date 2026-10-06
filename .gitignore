@@ -1,4 +1,24 @@
+# Dependencies
 node_modules/
+**/node_modules/
+
+# Environment variables / secrets
 .env
-dist/
+.env.*
+!.env.example
+
+# Production builds
+frontend/dist/
+backend/dist/
+
+# macOS
+.DS_Store
+
+# Backups / archives
+frontend-backup/
+*.zip
+*.tar
+*.gz
+
+# Cloudflare
 .wrangler/
