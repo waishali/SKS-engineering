@@ -32,6 +32,14 @@ export default function Navbar() {
         <a href="#contact" className="quote-btn">
           Get a Quote
         </a>
+
+       <button
+          type="button"
+          className="admin-panel-btn"
+          onClick={() => window.dispatchEvent(new Event("open-admin"))}>
+            Admin Panel
+      </button>
+
       </div>
     </header>
   );
